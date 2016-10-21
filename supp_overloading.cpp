@@ -4,14 +4,14 @@
 
 using namespace std; //unneeded because of specific use of std::
 
-enum class days:std::int8_t {SUNDAY,MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY};
+typedef enum class days:std::int8_t {SUNDAY,MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY}days;
 //unlike plain enums C++11 enum class is typesafe and does not silently
 //convert to int
 //rewrite to output enumerator identifiers
 
 ostream& operator<<(ostream& out, const days& d){
-    out << static_cast<int>(d); 
-    return out;     
+    out << static_cast<int>(d);
+    return out;
 }
 
 days operator++(days& d){ //PREFIX OPERATOR
